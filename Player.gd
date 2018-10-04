@@ -5,17 +5,30 @@ signal healthChanged
 signal dead
 
 export (PackedScene) var Bullet
-export (int) var speed
-export (int) var health
+
+export (int) var maxHealth
+export (int) var maxAttack
+export (int) var maxDexterity
+export (int) var maxDefense
+export (int) var maxSpeed
+
+export (int) var fullHealth
+export (int) var attack
 export (int) var dexterity
+export (int) var defense
+export (int) var speed
+
+export (int) var baseSpeed
 export (float) var gunCooldown
 
+var health
 var motion = Vector2()
 var alive = true
 var canShoot = true
 
 func _ready():
-	$GunTimer.wait_time = gunCooldown
+	$GunTimer.wait_time = 1 / (gunCooldown + (6.5*dexterity / 20))
+	health = fullHealth
 
 func shoot():
 	if canShoot: 
@@ -31,16 +44,16 @@ func _physics_process(delta):
 	$Gun.look_at(get_global_mouse_position())
 	
 	if Input.is_action_pressed("right"):
-		motion.x += 100
+		motion.x += baseSpeed
 		
 	if Input.is_action_pressed("left"):
-		motion.x -= 100
+		motion.x -= baseSpeed
 		
 	if Input.is_action_pressed("up"):
-		motion.y -= 100
+		motion.y -= baseSpeed
 		
 	if Input.is_action_pressed("down"):
-		motion.y += 100
+		motion.y += baseSpeed
 		
 	if Input.is_action_pressed("click"):
 		shoot()

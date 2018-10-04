@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 position = Vector2( 480, 288 )
 input_pickable = false
@@ -22,9 +22,17 @@ __meta__ = {
 "_edit_group_": true
 }
 Bullet = ExtResource( 2 )
-speed = 100
-health = 100
-dexterity = 100
+maxHealth = 1000
+maxAttack = 20
+maxDexterity = 20
+maxDefense = 20
+maxSpeed = 20
+fullHealth = 200
+attack = 0
+dexterity = 0
+defense = null
+speed = 0
+baseSpeed = 200
 gunCooldown = 1.0
 
 [node name="PlayerSprite" type="Sprite" parent="." index="0"]
