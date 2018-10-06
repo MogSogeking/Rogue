@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Ennemies/Ennemy.gd" type="Script" id=1]
 
-[node name="Ennemy" type="KinematicBody2D"]
+[node name="Ennemy" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
