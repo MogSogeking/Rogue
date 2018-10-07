@@ -19,7 +19,7 @@ func explode():
 func _process(delta):
 	position += velocity * delta
 	
-func _on_Bullet_body_enter(body):
+func _on_Bullet_body_entered(body):
 	if body.has_method('take_damage'):
 		body.take_damage(damage)
 	explode()
