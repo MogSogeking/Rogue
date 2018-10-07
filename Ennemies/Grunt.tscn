@@ -45,6 +45,8 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 2 )
 
+[connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]
+
 [connection signal="body_entered" from="DetectRadius" to="." method="_on_DetectRadius_body_entered"]
 
 [connection signal="body_exited" from="DetectRadius" to="." method="_on_DetectRadius_body_exited"]

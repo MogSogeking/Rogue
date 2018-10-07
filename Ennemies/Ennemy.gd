@@ -12,6 +12,7 @@ export (float) var gunCooldown
 var motion = Vector2()
 var direction = Vector2()
 var target = null
+var canShoot = true
 
 func control():
 	pass

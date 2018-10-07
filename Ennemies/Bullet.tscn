@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Ennemies/Bullet.gd" type="Script" id=1]
 
-
 [node name="Bullet" type="Area2D"]
 
 input_pickable = true

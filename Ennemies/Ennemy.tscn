@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Ennemies/Ennemy.gd" type="Script" id=1]
 
-[node name="Ennemy" type="KinematicBody2D" index="0"]
+[node name="Ennemy" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -19,7 +19,7 @@ gunCooldown = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-[node name="Gun" type="Node" parent="." index="2"]
+[node name="Gun" type="Node2D" parent="." index="2"]
 
 [node name="GunTimer" type="Timer" parent="." index="3"]
 
@@ -37,5 +37,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+
+[connection signal="shoot" from="." to="." method="_on_Ennemy_shoot"]
 
 
