@@ -29,6 +29,7 @@ var canShoot = true
 func _ready():
 	$GunTimer.wait_time = 1 / (gunCooldown + (6.5*dexterity / 20))
 	health = fullHealth
+	emit_signal('health_changed', fullHealth, fullHealth, fullHealth)
 
 func shoot():
 	if canShoot: 
@@ -36,6 +37,11 @@ func shoot():
 		$GunTimer.start()
 		var dir = Vector2(1, 0).rotated($Gun.global_rotation)
 		emit_signal('shoot', Bullet, $Gun.global_position, dir)
+
+func takeDamage(dmg):
+	var newHealth = health - dmg
+	emit_signal('healthChanged', fullHealth, health, newHealth)
+	health = newHealth
 
 func _physics_process(delta):
 	motion.x = 0

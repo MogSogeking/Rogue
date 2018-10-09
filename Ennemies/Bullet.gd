@@ -20,8 +20,8 @@ func _process(delta):
 	position += velocity * delta
 	
 func _on_Bullet_body_entered(body):
-	if body.has_method('take_damage'):
-		body.take_damage(damage)
+	if body.has_method('takeDamage'):
+		body.takeDamage(damage)
 	explode()
 	
 func _on_Lifetime_timeout():
