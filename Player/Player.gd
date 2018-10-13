@@ -42,6 +42,8 @@ func takeDamage(dmg):
 	var newHealth = health - dmg
 	emit_signal('healthChanged', fullHealth, health, newHealth)
 	health = newHealth
+	if health <= 0:
+		scene_res
 
 func _physics_process(delta):
 	motion.x = 0

@@ -27,5 +27,4 @@ func _on_DetectRadius_body_exited(body):
 		target = null
 		
 func _on_GunTimer_timeout():
-
 	canShoot = true
